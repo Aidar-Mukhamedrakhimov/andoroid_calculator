@@ -19,16 +19,36 @@
         android:text="@string/topCaption"
         android:background="@color/purple_500"
         />
-    <TextView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/txtViewHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/textViewBackground"
+            android:gravity="bottom|end"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/txtViewExpression"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:paddingRight="10dp"
         android:background="@color/textViewBackground"
         android:gravity="bottom|end"
-        android:text="12345672"
+        android:text=""
         />
 
     <include
