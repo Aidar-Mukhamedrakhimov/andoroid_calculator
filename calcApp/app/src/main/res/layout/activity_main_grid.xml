@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+<GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="4"
+    android:layout_gravity="center"
+    >
+
+    <Button
+        android:id="@+id/buttonC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle2"
+        android:text="@string/buttonC"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/buttonErase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:background="@drawable/circle3"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/buttonPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:background="@drawable/circle2"
+        android:padding="8dp"
+        android:text="@string/percent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/buttonDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle2"
+        android:text="@string/divide"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_7" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_8" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_9" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle2"
+        android:text="@string/multiply"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_4" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_5" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_6" />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle2"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_3" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle2"
+        android:text="@string/plus"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_size"
+        />
+
+    <Button
+        android:id="@+id/buttonPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_point" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/_0" />
+
+    <Button
+        android:id="@+id/buttonEqual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/circle"
+        android:textSize="@dimen/button_size"
+        android:textColor="@color/white"
+        android:text="@string/Equal" />
+
+
+
+</GridLayout>
+</FrameLayout>
