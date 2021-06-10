@@ -17,6 +17,13 @@ public class CalcOperations {
     private static final String _PLUS = "+";
     private static final String _EQUALS = "=";
 
+    private static final String _POINT_SIGN = ".";
+    private static final String _PERCENT_SIGN = "%";
+    private static final String _DIVIDE_SIGN = "/";
+    private static final String _MULTIPLY_SIGN = "*";
+    private static final String _MINUS_SIGN = "-";
+    private static final String _PLUS_SIGN = "+";
+
 
     public static void process(Calculator calculator, String str){
         if (calculator.isClearExpr())
@@ -36,11 +43,10 @@ public class CalcOperations {
 
     private static void makeResult(Calculator calculator){
         String expr = calculator.getExpr();
-        if (!expr.endsWith(".")&&!expr.endsWith("/")&&!expr.endsWith("*")
-                &&!expr.endsWith("-")&&!expr.endsWith("+"))
+        if (!stringEndsOverride(expr,_POINT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
         {
-            if (expr.contains("%"))
-                expr=expr.replaceAll("%","/100");
+            if (expr.contains(_PERCENT_SIGN))
+                expr=expr.replaceAll(_PERCENT_SIGN,"/100");
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
             Double result = null;
 
@@ -58,29 +64,51 @@ public class CalcOperations {
     }
 
     private static void setCalcOperation(Calculator calculator, String str){
-            if (str.equals(_PERCENT)) {
-                appendExpr(calculator,"%");
+        String strExpr = calculator.getExpr();
+        if (str.equals(_PERCENT)) {
+            if (!strExpr.isEmpty() &&
+                !stringEndsOverride(strExpr,_PERCENT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
+            {
+                appendExpr(calculator, _PERCENT_SIGN);
                 calculator.setPointFlag(false);
-            } else if (str.equals(_DIVIDE)) {
-                appendExpr(calculator,"/");
+            }
+        } else if (str.equals(_DIVIDE)) {
+            if (!strExpr.isEmpty() &&
+            !stringEndsOverride(strExpr,_PERCENT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
+            {
+                appendExpr(calculator, _DIVIDE_SIGN);
                 calculator.setPointFlag(false);
-            } else if (str.equals(_MULTIPLY)) {
-                appendExpr(calculator,"*");
+            }
+        } else if (str.equals(_MULTIPLY)) {
+            if (!strExpr.isEmpty() &&
+            !stringEndsOverride(strExpr,_PERCENT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
+            {
+                appendExpr(calculator, _MULTIPLY_SIGN);
                 calculator.setPointFlag(false);
-            } else if (str.equals(_MINUS)) {
-                appendExpr(calculator,"-");
+            }
+        } else if (str.equals(_MINUS)) {
+            if (!stringEndsOverride(strExpr,_PERCENT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
+            {
+                appendExpr(calculator, _MINUS_SIGN);
                 calculator.setPointFlag(false);
-            } else if (str.equals(_PLUS)) {
-                appendExpr(calculator,"+");
+            }
+        } else if (str.equals(_PLUS)) {
+            if (!strExpr.isEmpty() &&
+            !stringEndsOverride(strExpr,_PERCENT_SIGN,_DIVIDE_SIGN,_MULTIPLY_SIGN,_MINUS_SIGN,_PLUS_SIGN))
+            {
+                appendExpr(calculator, _PLUS_SIGN);
                 calculator.setPointFlag(false);
-            } else appendExpr(calculator,str);
+            }
+        } else appendExpr(calculator,str);
     }
 
     private static void eraseValue(Calculator calculator){
         String str = calculator.getExpr();
-        if (str.endsWith("."))
-            calculator.setPointFlag(false);
-        calculator.setExpr(str.substring(0,str.length()-1));
+        if (!str.isEmpty()) {
+            if (str.endsWith(_POINT_SIGN))
+                calculator.setPointFlag(false);
+            calculator.setExpr(str.substring(0, str.length() - 1));
+        }
     }
 
     private static void clearCalculator(Calculator calculator){
@@ -96,8 +124,17 @@ public class CalcOperations {
 
     private static void putPoint(Calculator calculator){
         if (!calculator.getExpr().isEmpty() && !calculator.isPointFlag()) {
-            calculator.setExpr(calculator.getExpr() + ".");
+            calculator.setExpr(calculator.getExpr() + _POINT_SIGN);
             calculator.setPointFlag(true);
         }
+    }
+
+    private static boolean stringEndsOverride(String strExpr, String... strs){
+        boolean flag = false;
+        for (String str:strs){
+            if (strExpr.endsWith(str))
+                flag=true;
+        }
+        return flag;
     }
 }
