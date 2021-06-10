@@ -6,6 +6,7 @@
     android:background="@drawable/background"
     >
 <GridLayout
+    android:id="@+id/buttonContainer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:columnCount="4"
@@ -29,7 +30,8 @@
         android:layout_height="wrap_content"
         android:alpha="0.9"
         android:background="@drawable/circle3"
-        android:textSize="@dimen/button_size" />
+        android:textSize="@dimen/button_size"
+        android:text=""/>
 
     <Button
         android:id="@+id/buttonPercent"

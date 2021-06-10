@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_size">50sp</dimen>
+    <dimen name="button_size_land">30sp</dimen>
+    <dimen name="textViewSize">30sp</dimen>
+    <dimen name="textViewPaddingRightLand">30dp</dimen>
+    <dimen name="textViewPaddingRight">10dp</dimen>
 </resources>
